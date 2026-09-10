@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-space-950: #030014;
+  --color-space-900: #0a0620;
+  --color-space-800: #14103a;
+  --color-space-700: #241a5e;
+
+  --color-nebula-pink: #f472b6;
+  --color-nebula-purple: #a855f7;
+  --color-nebula-blue: #38bdf8;
+
+  --color-star-yellow: #fde68a;
+  --color-star-white: #e0f2fe;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-space-950);
+  color: #e2e8f0;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(168, 85, 247, 0.4);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #06021a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#a855f7, #38bdf8);
+  border-radius: 999px;
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #f472b6 0%, #a855f7 40%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-glow {
+  text-shadow:
+    0 0 30px rgba(168, 85, 247, 0.55),
+    0 0 80px rgba(56, 189, 248, 0.3);
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(8%, -6%, 0) scale(1.06);
+  }
+}
+
+@keyframes float-slower {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-10%, 6%, 0) scale(1.1);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 22s ease-in-out infinite;
+}
+.animate-float-slower {
+  animation: float-slower 28s ease-in-out infinite;
+}
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+.animate-pulse-ring {
+  animation: pulse-ring 2.4s ease-out infinite;
+}
